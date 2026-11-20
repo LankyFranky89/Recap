@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: Recap
+## Notes: End-of-session summary card: time, XP, gold, quests, deaths, loot and a fun stat. /recap
+## Author: Frank
+## Version: 1.1.0
+## SavedVariables: RecapDB
+## SavedVariablesPerCharacter: RecapCharDB
+
+Recap.lua
