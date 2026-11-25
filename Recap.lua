@@ -1,3 +1,7 @@
+local function Secret(v) -- chat hidden by the game (or faked by /cc secret)
+  if CopyCatFakeSecret and CopyCatFakeSecret > GetTime() then return true end
+  return issecretvalue ~= nil and issecretvalue(v) == true
+end
 -- Recap: end-of-session summary card for WoW Forever
 local ADDON = ...
 local GetItemInfo = GetItemInfo or (C_Item and C_Item.GetItemInfo)
@@ -107,6 +111,7 @@ local function BuildLootPatterns()
 end
 
 local function OnLoot(msg)
+    if not msg or Secret(msg) then return end
     for _, p in ipairs(LOOT_PATTERNS) do
         local link = msg:match(p)
         if link then
@@ -133,6 +138,7 @@ local function BuildKillPatterns()
 end
 
 local function OnXPMsg(msg)
+    if not msg or Secret(msg) then return end
     for _, p in ipairs(KILL_PATTERNS) do
         local mob = msg:match(p)
         if mob and mob ~= "" then

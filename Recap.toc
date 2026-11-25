@@ -2,7 +2,7 @@
 ## Title: Recap
 ## Notes: End-of-session summary card: time, XP, gold, quests, deaths, loot and a fun stat. /recap
 ## Author: Frank
-## Version: 1.1.0
+## Version: 1.1.2
 ## SavedVariables: RecapDB
 ## SavedVariablesPerCharacter: RecapCharDB
 
